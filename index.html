@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trattoria Verde（トラットリア・ヴェルデ）| 旬野菜とパスタの店</title>
+<meta name="description" content="旬の野菜と、丁寧な一皿を。Trattoria Verdeの公式サイトです。">
+
+<!-- ▼ Googleフォント（Shippori Mincho：見出し用 / Noto Sans JP：本文用） -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- ▼ ファビコン（お好きな画像に差し替えてください。無ければこの行を削除してOK） -->
+<!-- <link rel="icon" href="images/favicon.ico"> -->
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ==================== ヘッダー ==================== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <!-- 店舗名（テキストロゴ）。画像ロゴを使う場合はこのaタグの中身をimgタグに差し替えてください -->
+      Trattoria Verde
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="site-nav" id="siteNav">
+      <ul>
+        <li><a href="#lunch">本日のランチ</a></li>
+        <li><a href="#menu">メニュー</a></li>
+        <li><a href="#info">店舗情報</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ==================== メインビジュアル ==================== -->
+<section class="hero" id="home">
+  <!--
+    背景画像を差し替える場合：
+    1. images フォルダに写真を保存（例：images/hero.jpg）
+    2. style.css 内の .hero { background-image: ... } の一行を書き換えてください
+    今はグラデーションの仮背景になっています。
+  -->
+  <div class="hero-inner">
+    <p class="hero-eyebrow">旬野菜とパスタの店</p>
+    <h1 class="hero-copy">旬の野菜と、<br>丁寧な一皿を。</h1>
+    <p class="hero-sub">毎朝仕入れる季節の野菜を、シンプルに、美味しく。</p>
+    <a href="ここにLINEの予約URLを入力してください" class="btn-primary">LINEで予約する</a>
+  </div>
+</section>
+
+<!-- ==================== 本日の日替わりランチ ==================== -->
+<section class="section lunch-section" id="lunch">
+  <div class="section-inner">
+    <h2 class="section-title">本日の日替わりランチ</h2>
+    <p class="section-lead">Instagramの最新投稿を表示するエリアです（下記のいずれかで差し替えてください）</p>
+
+    <div class="today-lunch-box">
+      <!--
+        ▼ ここに以下のどちらかを埋め込んでください ▼
+
+        【パターンA：Instagram埋め込み】
+        Instagramの投稿ページ右上「…」→「埋め込み」からコードを取得し、
+        この今日-lunch-box の中に <blockquote class="instagram-media">... の
+        コードを貼り付けてください（Instagram側の公式JS読み込みタグも忘れずに）。
+
+        【パターンB：microCMSのデータを表示】
+        script.js の下部にサンプル関数 fetchTodayLunchFromMicroCMS() を用意しています。
+        microCMSのAPIキーとエンドポイントURLを設定して呼び出してください。
+      -->
+      <div class="placeholder-box">
+        <p>ここにInstagramの最新投稿、またはmicroCMSから取得した「本日のランチ」情報が表示されます</p>
+        <span class="placeholder-tag">埋め込み待ち</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== メニュー紹介 ==================== -->
+<section class="section menu-section" id="menu">
+  <div class="section-inner">
+    <h2 class="section-title">人気メニュー</h2>
+
+    <div class="menu-grid">
+
+      <article class="menu-card">
+        <!-- 画像は images/menu1.jpg のように保存し、下のsrcを書き換えてください -->
+        <img src="images/ここに写真ファイル名を入れてください.jpg" alt="本日の鮮魚と彩り野菜のグリル" class="menu-photo">
+        <h3 class="menu-name">本日の鮮魚と彩り野菜のグリル</h3>
+        <p class="menu-desc">その日仕入れた魚と、農園直送の野菜を炭火でシンプルに。</p>
+        <p class="menu-price">¥1,800</p>
+      </article>
+
+      <article class="menu-card">
+        <img src="images/ここに写真ファイル名を入れてください.jpg" alt="自家製バジルジェノベーゼパスタ" class="menu-photo">
+        <h3 class="menu-name">自家製バジルジェノベーゼパスタ</h3>
+        <p class="menu-desc">店内で摘んだバジルを毎日手作業でペーストに。</p>
+        <p class="menu-price">¥1,500</p>
+      </article>
+
+      <article class="menu-card">
+        <img src="images/ここに写真ファイル名を入れてください.jpg" alt="森のキノコと黒トリュフのリゾット" class="menu-photo">
+        <h3 class="menu-name">森のキノコと黒トリュフのリゾット</h3>
+        <p class="menu-desc">数種のキノコを煮込み、仕上げに黒トリュフを削って。</p>
+        <p class="menu-price">¥2,200</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 店舗情報 ==================== -->
+<section class="section info-section" id="info">
+  <div class="section-inner info-grid">
+
+    <div class="info-text">
+      <h2 class="section-title">店舗情報</h2>
+      <dl class="info-list">
+        <dt>住所</dt>
+        <dd>〒150-0041 東京都渋谷区神南1-2-3 みどりビル1F<!-- ここに実際の住所を入力してください --></dd>
+
+        <dt>営業時間</dt>
+        <dd>
+          11:00–15:00（L.O. 14:30）<br>
+          17:00–22:00（L.O. 21:30）<br>
+          定休日：月曜日<!-- ここに実際の営業時間・定休日を入力してください -->
+        </dd>
+
+        <dt>アクセス</dt>
+        <dd>JR渋谷駅より徒歩8分<!-- ここにアクセス方法を入力してください --></dd>
+
+        <dt>電話</dt>
+        <dd>03-0000-0000<!-- ここに電話番号を入力してください --></dd>
+      </dl>
+    </div>
+
+    <div class="info-map">
+      <!--
+        Googleマップの埋め込み方法：
+        1. Googleマップで店舗を検索
+        2.「共有」→「地図を埋め込む」→ HTMLをコピー
+        3. 下のiframeタグのsrc（と必要ならwidth/height）を書き換えてください
+        今は東京駅付近のサンプル地図が表示されています。
+      -->
+      <iframe
+        class="map-frame"
+        src="https://www.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%A7%85&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="店舗地図（ここにGoogleマップの埋め込みURLを入力してください）">
+      </iframe>
+    </div>
+
+  </div>
+</section>
+
+<!-- ==================== お問い合わせフォーム ==================== -->
+<section class="section contact-section" id="contact">
+  <div class="section-inner">
+    <h2 class="section-title">お問い合わせ</h2>
+    <p class="section-lead">ご予約・貸切等のご相談はこちらからどうぞ（お急ぎの場合はLINEまたはお電話が確実です）</p>
+
+    <!--
+      フォームの送信先について：
+      現状は送信すると script.js が確認メッセージを出すだけのダミー動作です。
+      実際に送信できるようにするには、以下のいずれかに差し替えてください。
+        ・Googleフォームの埋め込みに置き換える
+        ・Formspree等のフォーム送信サービスのURLをaction属性に設定する
+        ・action="mailto:ここに送信先メールアドレスを入力してください" に変更する（簡易対応）
+    -->
+    <form class="contact-form" id="contactForm" action="ここにフォームの送信先URLを入力してください" method="POST">
+      <label for="name">お名前</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">メールアドレス</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">お問い合わせ内容</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit" class="btn-primary">送信する</button>
+    </form>
+  </div>
+</section>
+
+<!-- ==================== フッター ==================== -->
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> Trattoria Verde<!-- ここに正式な店舗名を入力してください --></p>
+</footer>
+
+<!-- ==================== 常時表示のLINE予約ボタン ==================== -->
+<a href="ここにLINEの予約URLを入力してください" class="line-fixed-btn" target="_blank" rel="noopener">
+  LINEで予約する
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
