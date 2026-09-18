@@ -1,0 +1,416 @@
+/* =========================================================
+   トークン（色・タイポグラフィ）
+   ここを書き換えるだけで全体の雰囲気を調整できます
+   ========================================================= */
+:root {
+  --color-bg: #FAFAF7;
+  --color-white: #FFFFFF;
+  --color-green-deep: #1F4D3A;   /* メインの深緑（ヘッダー・ボタン） */
+  --color-green-mid: #4B7A5E;    /* サブの緑（アクセント・アイコン） */
+  --color-green-soft: #E8F0E4;   /* 淡い緑（セクション背景） */
+  --color-text: #262622;
+  --color-text-soft: #5C5C55;
+  --color-border: #DDE3D8;
+
+  --font-display: "Shippori Mincho", serif;
+  --font-body: "Noto Sans JP", sans-serif;
+
+  --max-width: 1080px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  margin: 0;
+}
+
+a { color: inherit; text-decoration: none; }
+
+img { max-width: 100%; display: block; }
+
+.section-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section { padding: 88px 0; }
+
+.section-title {
+  font-size: clamp(24px, 3vw, 32px);
+  margin-bottom: 12px;
+  color: var(--color-green-deep);
+}
+
+.section-lead {
+  color: var(--color-text-soft);
+  margin-bottom: 40px;
+  max-width: 60ch;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--color-green-deep);
+  color: var(--color-white);
+  padding: 14px 32px;
+  border-radius: 4px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: var(--color-green-mid);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   ヘッダー
+   ========================================================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-green-deep);
+  letter-spacing: 0.02em;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  font-size: 14px;
+  color: var(--color-text);
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.site-nav a:hover {
+  color: var(--color-green-deep);
+  border-color: var(--color-green-deep);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  background: var(--color-green-deep);
+  border-radius: 2px;
+}
+
+/* =========================================================
+   メインビジュアル
+   ========================================================= */
+.hero {
+  /* 背景画像を使う場合は下のurl(...)にファイルパスを入れ、
+     linear-gradientの行を削除するか重ねて使ってください */
+  background:
+    linear-gradient(180deg, rgba(31,77,58,0.82), rgba(31,77,58,0.55)),
+    linear-gradient(135deg, #2d5e46, #7fa98a);
+  color: var(--color-white);
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hero-eyebrow {
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: var(--color-green-soft);
+  margin: 0 0 16px;
+}
+
+.hero-copy {
+  font-size: clamp(32px, 6vw, 56px);
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.hero-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,0.88);
+  margin-bottom: 32px;
+  max-width: 42ch;
+}
+
+/* =========================================================
+   本日の日替わりランチ
+   ========================================================= */
+.lunch-section { background: var(--color-green-soft); }
+
+.today-lunch-box { max-width: 560px; }
+
+.placeholder-box {
+  border: 1px dashed var(--color-green-mid);
+  border-radius: 6px;
+  background: var(--color-white);
+  padding: 40px 24px;
+  text-align: center;
+  color: var(--color-text-soft);
+}
+
+.placeholder-tag {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--color-green-deep);
+  background: var(--color-green-soft);
+  border: 1px solid var(--color-green-mid);
+  border-radius: 100px;
+  padding: 4px 12px;
+}
+
+/* =========================================================
+   メニュー
+   ========================================================= */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.menu-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.menu-photo {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background: var(--color-green-soft);
+}
+
+.menu-name {
+  font-size: 18px;
+  margin: 20px 20px 8px;
+}
+
+.menu-desc {
+  font-size: 14px;
+  color: var(--color-text-soft);
+  margin: 0 20px 12px;
+}
+
+.menu-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-green-deep);
+  margin: 0 20px 20px;
+}
+
+/* =========================================================
+   店舗情報
+   ========================================================= */
+.info-section { background: var(--color-white); }
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.info-list {
+  margin: 0;
+}
+
+.info-list dt {
+  font-size: 13px;
+  color: var(--color-green-mid);
+  margin-top: 20px;
+}
+
+.info-list dt:first-child { margin-top: 0; }
+
+.info-list dd {
+  margin: 4px 0 0;
+  font-size: 15px;
+}
+
+.map-frame {
+  width: 100%;
+  height: 320px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+}
+
+/* =========================================================
+   お問い合わせフォーム
+   ========================================================= */
+.contact-section { background: var(--color-green-soft); }
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 480px;
+}
+
+.contact-form label {
+  font-size: 13px;
+  color: var(--color-text-soft);
+  margin-top: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-family: var(--font-body);
+  font-size: 15px;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-white);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--color-green-mid);
+  outline-offset: 1px;
+}
+
+.contact-form button {
+  margin-top: 24px;
+  align-self: flex-start;
+}
+
+/* =========================================================
+   フッター
+   ========================================================= */
+.site-footer {
+  background: var(--color-green-deep);
+  color: rgba(255,255,255,0.8);
+  text-align: center;
+  padding: 28px 24px;
+  font-size: 13px;
+}
+
+/* =========================================================
+   常時表示のLINE予約ボタン
+   ========================================================= */
+.line-fixed-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 200;
+  background: var(--color-green-deep);
+  color: var(--color-white);
+  padding: 14px 22px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 6px 16px rgba(31,77,58,0.35);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.line-fixed-btn:hover {
+  background: var(--color-green-mid);
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   レスポンシブ（スマートフォン対応）
+   ========================================================= */
+@media (max-width: 860px) {
+  .menu-grid { grid-template-columns: 1fr; }
+  .info-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .nav-toggle { display: flex; }
+
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+
+  .site-nav.is-open { max-height: 260px; }
+
+  .site-nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 24px 16px;
+  }
+
+  .site-nav li { border-top: 1px solid var(--color-border); }
+  .site-nav li:first-child { border-top: none; }
+
+  .site-nav a {
+    display: block;
+    padding: 14px 0;
+    border-bottom: none;
+  }
+
+  .section { padding: 56px 0; }
+
+  .line-fixed-btn {
+    right: 16px;
+    bottom: 16px;
+    padding: 12px 18px;
+    font-size: 13px;
+  }
+}
